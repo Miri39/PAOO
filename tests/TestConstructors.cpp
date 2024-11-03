@@ -18,4 +18,9 @@ int main(){
     delete(c3);
 
     c2->Show();
+
+    MyClass *c4 = new MyClass(std::move(*c2));
+
+    c2->Show();
+    c4->Show();
 }

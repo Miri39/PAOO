@@ -34,8 +34,15 @@ MyClass::MyClass(const MyClass &obj){
     counter++;
 }
 
-MyClass::MyClass(MyClass &&obj){
-    
+MyClass::MyClass(MyClass &&obj) {
+    std::cout << "Move Constructor called" << std::endl;
+
+    this->size = obj.size;
+    this->weight = obj.weight;
+    counter++; //base object not actually getting freed
+
+    obj.size = 0;
+    obj.weight = 0;
 }
 
 
